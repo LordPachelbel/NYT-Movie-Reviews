@@ -1,2 +1,4 @@
-# NYT-movie-reviews
-A simple search UI for movie reviews published by the New York Times. using their API
+# NYT-Movie-Reviews
+A search interface for New York Times movie reviews.
+
+This project uses the [New York Times API](http://developer.nytimes.com/) which has *really* nice documentation.
