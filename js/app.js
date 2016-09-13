@@ -34,7 +34,12 @@ jQuery(function($) {
 		$.getJSON(endpoint, data).done(function(data) {
 			console.log(data);
 
-			// todo - check data.has_more=true and data.num_results to repeatedly call the API to get all results
+			// todo - check data.has_more=true to repeatedly call the API to get all results
+			
+			if(data.num_results == 0) {
+				$("#results").html("<p>No results found.</p>")
+				return false;
+			}
 
 		  $.each(data.results, function(key, review) {
 
@@ -53,7 +58,7 @@ jQuery(function($) {
 			});
 
 			$("#results").loadTemplate("templates/review.html", data.results, {isFile: true});
- 			
+
 		}).fail(function(err) {
 			throw err;
 		});
@@ -61,5 +66,5 @@ jQuery(function($) {
 		return false;
 
 	});
-	
+
 });
