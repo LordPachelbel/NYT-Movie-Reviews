@@ -43,25 +43,19 @@ jQuery(function($) {
 		  $.each(result.results, function(key, review) {
 				console.log(key);
 				//console.log(review);
+				templateData = null;
 				templateData = {
-					// the stuff I couldn't figure out how to refer to in the template
+					// these are things I couldn't figure out how to refer to in the template
 					reviewLink: review.link.url,
 					reviewAlt: review.link.suggested_link_text,
 					reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
-
-					// the stuff that always worked
-					display_title: review.display_title,
-					critics_pick: review.critics_pick,
-					mpaa_rating: review.mpaa_rating,
-					publication_date: review.publication_date,
-					headline: review.headline,
-					summary_short: review.summary_short
 				};
-				console.log(templateData);
-				$("#results").loadTemplate("templates/review.html", templateData, {isFile: true, append: true});
+				//console.log(templateData);
+				$.extend(review, templateData);
+				//$("#results").loadTemplate("templates/review.html", templateData, {isFile: true, append: true});
 			});
 
-			//$("#results").loadTemplate("templates/review.html", result.results, {isFile: true});
+			$("#results").loadTemplate("templates/review.html", result.results, {isFile: true});
  			
 		}).fail(function(err) {
 			throw err;
