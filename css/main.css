@@ -1,7 +1,22 @@
 /* typography (font-family is handled by Typekit) */
 
 h1 {
-	font-size: 50px
+	font-size: 36px;
+}
+
+.site-header h2 {
+	margin: 10px 0 25px 0;
+	font-size: 24px;
+}
+
+@media (min-width: 768px) {
+	h1 {
+		font-size: 50px
+	}
+	
+	.site-header h2 {
+		font-size: 30px;
+	}
 }
 
 p {
@@ -13,8 +28,12 @@ p {
 	font-style: italic;
 }
 
-.media-heading {
-	margin: 20px 0 15px;
+.reviews > h2 {
+	margin-top: 0;
+}
+
+.review-title {
+	margin: 15px 0 0 0;
 	font-weight: 500;
 	font-size: 25px;
 	line-height: 1;
@@ -26,21 +45,89 @@ p {
 	text-transform: capitalize;
 }
 
+.review-meta {
+  margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+}
 
+.review-meta li {
+	display: inline-block;
+	margin: 0 7px 0 0;
+	padding: 0 10px 0 0;
+	font-size: 12px;
+	border-right: 1px solid #333333;
+}
+
+.review-meta li:last-child {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+
+.site-footer p {
+	font-size: 14px;
+}
+
+.site-footer p:last-of-type {
+	margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .site-footer .mine p {
+		text-align: right;
+  }
+}
 
 
 
 
 /* structure */
 .site-header {
-	background: red;
+	background: #f1f1f1;
 }
 
-.media {
-	margin: 0 0 20px 0;
+main {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.review {
+	margin: 0 0 50px 0;
+	padding: 0 0 50px 0;
+	border-bottom: 1px solid #333333;
+}
+
+.review:last-of-type {
+	border: none;
+}
+
+.site-footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #f1f1f1;
+}
+
+.nyt-logo {
+	position: relative;
+	left: -7px;
 }
 
 
+
+@media (max-width: 767px) {
+	.media-left {
+		display: block;
+	}
+	.media-body {
+		display: block;
+		width: auto;
+	}
+  .review-image {
+		display: inline-block;
+	}
+}
 
 
 

@@ -1,15 +1,9 @@
 jQuery(function($) {
 
 	$.addTemplateFormatter({
-		reviewLink: function(value) {
-			return value.url;
+		datePrettyFormatter: function(value, template) {
+			return new Date(value).toDateString();
 		},
-		/*image_src: function (value) {
-			return value.src;
-		},
-		image_src: function (value) {
-			return value.src;
-		},*/
 		upperCaseFormatter: function(value, template) {
 			return value.toUpperCase();
 		},
@@ -37,25 +31,28 @@ jQuery(function($) {
 		}) + '&' + $(this).serialize();
 		//console.log(data);
 
-		$.getJSON(endpoint, data).done(function(result) {
-			//console.log(result);
-			
-		  $.each(result.results, function(key, review) {
-				console.log(key);
-				//console.log(review);
+		$.getJSON(endpoint, data).done(function(data) {
+			console.log(data);
+
+			// todo - check data.has_more=true and data.num_results to repeatedly call the API to get all results
+
+		  $.each(data.results, function(key, review) {
+
 				templateData = null;
 				templateData = {
-					// these are things I couldn't figure out how to refer to in the template
 					reviewLink: review.link.url,
+					reviewTitle: review.link.suggested_link_text,
 					reviewAlt: review.link.suggested_link_text,
 					reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
+					criticsPick: (review.critics_pick == 1) ? '<span class="glyphicon glyphicon-star" title="NYT Critics\' Pick"></span>' : ''
 				};
-				//console.log(templateData);
+
 				$.extend(review, templateData);
-				//$("#results").loadTemplate("templates/review.html", templateData, {isFile: true, append: true});
+				//console.log(review);
+
 			});
 
-			$("#results").loadTemplate("templates/review.html", result.results, {isFile: true});
+			$("#results").loadTemplate("templates/review.html", data.results, {isFile: true});
  			
 		}).fail(function(err) {
 			throw err;
