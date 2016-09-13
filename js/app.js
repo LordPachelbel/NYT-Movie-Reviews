@@ -44,11 +44,18 @@ jQuery(function($) {
 				console.log(key);
 				//console.log(review);
 				templateData = {
+					// the stuff I couldn't figure out how to refer to in the template
 					reviewLink: review.link.url,
-					reviewImage: review.multimedia.src,
 					reviewAlt: review.link.suggested_link_text,
-					reviewTitle: review.display_title,
-					reviewCriticsPick: review.critics_pick
+					reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
+
+					// the stuff that always worked
+					display_title: review.display_title,
+					critics_pick: review.critics_pick,
+					mpaa_rating: review.mpaa_rating,
+					publication_date: review.publication_date,
+					headline: review.headline,
+					summary_short: review.summary_short
 				};
 				console.log(templateData);
 				$("#results").loadTemplate("templates/review.html", templateData, {isFile: true, append: true});
