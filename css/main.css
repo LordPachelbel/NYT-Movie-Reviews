@@ -38,6 +38,10 @@ label {
 }
 
 .reviews > h2 {
+	margin: 0 0 10px 0;
+}
+
+.reviews > p {
 	margin: 0 0 50px 0;
 }
 
