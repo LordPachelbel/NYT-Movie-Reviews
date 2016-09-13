@@ -1,25 +1,61 @@
 jQuery(function($) {
 
+	$.addTemplateFormatter({
+		reviewLink: function(value) {
+			return value.url;
+		},
+		/*image_src: function (value) {
+			return value.src;
+		},
+		image_src: function (value) {
+			return value.src;
+		},*/
+		upperCaseFormatter: function(value, template) {
+			return value.toUpperCase();
+		},
+		lowerCaseFormatter: function(value, template) {
+			return value.toLowerCase();
+		},
+		sameCaseFormatter: function(value, template) {
+			if(template == "upper") {
+				return value.toUpperCase();
+			} else {
+				return value.toLowerCase();
+			}
+		}
+	});
+
+
 	$("#search-form").submit(function(e) {
 		e.preventDefault();
 
 		var endpoint = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
 
-		$.getJSON(endpoint, {
+		var data = $.param({
 			'api-key': API_KEY_MOVIES,
-			'query': 'Jaws'
-		}).done(function(result) {
-			console.log(result);
-			//$("#results").text(JSON.stringify(result));
+			'order': 'by-title'
+		}) + '&' + $(this).serialize();
+		//console.log(data);
 
-			var items = [];
-			$.each(result.results, function(key, movieReviewObject) {
-				items.push( "<li id='" + key + "'>" + movieReviewObject + "</li>" );
+		$.getJSON(endpoint, data).done(function(result) {
+			//console.log(result);
+			
+		  $.each(result.results, function(key, review) {
+				console.log(key);
+				//console.log(review);
+				templateData = {
+					reviewLink: review.link.url,
+					reviewImage: review.multimedia.src,
+					reviewAlt: review.link.suggested_link_text,
+					reviewTitle: review.display_title,
+					reviewCriticsPick: review.critics_pick
+				};
+				console.log(templateData);
+				$("#results").loadTemplate("templates/review.html", templateData, {isFile: true, append: true});
 			});
-			$( "<ul/>", {
-				"class": "my-new-list",
-				html: items.join("")
-			}).appendTo("#results");
+
+			//$("#results").loadTemplate("templates/review.html", result.results, {isFile: true});
+ 			
 		}).fail(function(err) {
 			throw err;
 		});
@@ -29,23 +65,3 @@ jQuery(function($) {
 	});
 	
 });
-
-
-
-
-
-/*$("#results").loadTemplate("templates/review.html",
-    {
-        author: 'Joe Bloggs',
-        date: '25th May 2013',
-        authorPicture: 'Authors/JoeBloggs.jpg',
-        post: 'This is the contents of my post'
-    },
-		{overwriteCache: true}
-		);
-});*/
-	
-	
-	
-
-
