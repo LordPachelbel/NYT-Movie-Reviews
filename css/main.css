@@ -1,8 +1,7 @@
-.media-heading {
-	margin: 20px 0 15px;
-	font-weight: 500;
-	font-size: 25px;
-	line-height: 1;
+/* typography (font-family is handled by Typekit) */
+
+h1 {
+	font-size: 50px
 }
 
 p {
@@ -10,9 +9,31 @@ p {
 	line-height: 1.5;
 }
 
+.site-header cite {
+	font-style: italic;
+}
+
+.media-heading {
+	margin: 20px 0 15px;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 1;
+}
 
 
 
+
+
+
+
+/* structure */
+.site-header {
+	background: red;
+}
+
+.media {
+	margin: 0 0 20px 0;
+}
 
 
 
