@@ -1,6 +1,14 @@
+.media-heading {
+	margin: 20px 0 15px;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 1;
+}
 
-
-
+p {
+	font-size: 17px;
+	line-height: 1.5;
+}
 
 
 
