@@ -1,0 +1,448 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2016 The New York Times Company. All Rights Reserved.",
+  "has_more": true,
+  "num_results": 20,
+  "results": [
+    {
+      "display_title": "When the Bough Breaks",
+      "mpaa_rating": "PG-13",
+      "critics_pick": 0,
+      "byline": "NEIL GENZLINGER",
+      "headline": "Review: ‘When the Bough Breaks,’ Blame a Scary Pregnancy Surrogate",
+      "summary_short": "This movie, about a well-off couple and the woman they hire to carry their embryo, looks for suspense in a genre that has little left.",
+      "publication_date": "2016-09-09",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:31",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/10/movies/review-when-the-bough-breaks-blame-a-scary-pregnancy-surrogate.html",
+        "suggested_link_text": "Read the New York Times Review of When the Bough Breaks"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/10/arts/10WHENBOUGH/10WHENBOUGH-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Kicks",
+      "mpaa_rating": "R",
+      "critics_pick": 1,
+      "byline": "STEPHEN HOLDEN",
+      "headline": "Review: In ‘Kicks,’ the Promise (and Perils) of Those Air Jordans",
+      "summary_short": "This debut feature depicts a 15-year-old in a tough neighborhood who buys the shoes of his dreams — and the desperation he feels when they are taken from him.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:30",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/kicks-review.html",
+        "suggested_link_text": "Read the New York Times Review of Kicks"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09KICKS/09KICKS-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Demon",
+      "mpaa_rating": "R",
+      "critics_pick": 1,
+      "byline": "MANOHLA DARGIS",
+      "headline": "Review: In ‘Demon,’ Wedding Jitters From the Uninvited Dead",
+      "summary_short": "A modern ghost story haunted by the Holocaust, this film by the Polish director Marcin Wrona reconceptualizes the Jewish mythology of the dybbuk.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:29",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/demon-review.html",
+        "suggested_link_text": "Read the New York Times Review of Demon"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09DEMONALT/09DEMONALT-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "As I Open My Eyes",
+      "mpaa_rating": "",
+      "critics_pick": 1,
+      "byline": "STEPHEN HOLDEN",
+      "headline": "Review: In ‘As I Open My Eyes,’ Feeling a Revolution Coming",
+      "summary_short": "A headstrong singer comes of age on the eve of Tunisia’s Jasmine Revolution.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:29",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/review-as-i-open-my-eyes.html",
+        "suggested_link_text": "Read the New York Times Review of As I Open My Eyes"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09ASIOPEN/09ASIOPEN-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Cameraperson",
+      "mpaa_rating": "",
+      "critics_pick": 1,
+      "byline": "A. O. SCOTT",
+      "headline": "Review: In ‘Cameraperson,’ a Found Poem Filtered Through an Intent Eye",
+      "summary_short": "Kirsten Johnson’s riveting documentary flits from Bosnia to Darfur to ground zero and zigzags across time, prompting reflection on the nature of her art.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:28",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/cameraperson-review-kirsten-johnson.html",
+        "suggested_link_text": "Read the New York Times Review of Cameraperson"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09CAMERA/09CAMERA-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "London Road",
+      "mpaa_rating": "",
+      "critics_pick": 1,
+      "byline": "JEANNETTE CATSOULIS",
+      "headline": "Review: 5 Murdered Prostitutes and an Anxious City in ‘London Road’",
+      "summary_short": "A spate of real-life murders in England in 2006 form the basis of this film directed by Rufus Norris.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:26",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/london-road-review.html",
+        "suggested_link_text": "Read the New York Times Review of London Road"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09LONDONROAD/09LONDONROAD-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Sully",
+      "mpaa_rating": "PG-13",
+      "critics_pick": 1,
+      "byline": "MANOHLA DARGIS",
+      "headline": "Review: Sully Landed the Plane. Then He Had to Endure the Spotlight.",
+      "summary_short": "“Sully,” Clint Eastwood’s film about US Airways Flight 1549, largely involves what happens after he, his crew and his passengers are plucked from the Hudson.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:25",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/sully-review.html",
+        "suggested_link_text": "Read the New York Times Review of Sully"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09SULLY/09SULLY-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Starving the Beast",
+      "mpaa_rating": "Not Rated",
+      "critics_pick": 1,
+      "byline": "DANIEL M. GOLD",
+      "headline": "Review: ‘Starving the Beast’ Traces the Burdens of Higher Education Defunding",
+      "summary_short": "This documentary by Steve Mims describes an ideological war over public higher education that is being conducted state by state.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-02",
+      "date_updated": "2016-09-12 22:44:24",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/starving-the-beast-review-steve-mims.html",
+        "suggested_link_text": "Read the New York Times Review of Starving the Beast"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/01/movies/video-starving-the-beast/video-starving-the-beast-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Defying the Nazis",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "KEN JAWOROWSKI",
+      "headline": "Review: ‘Defying the Nazis’: An American Couple on a Rescue Mission",
+      "summary_short": "Ken Burns and Artemis Joukowsky’s documentary tells of Waitstill and Martha Sharp, who traveled to Czechoslovakia in 1939 to help Jews and others flee persecution.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-20",
+      "date_updated": "2016-09-12 22:44:30",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/defying-the-nazis-review.html",
+        "suggested_link_text": "Read the New York Times Review of Defying the Nazis"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09DEFYING/09DEFYING-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Author: The JT Leroy Story",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "A. O. SCOTT",
+      "headline": "Review: ‘Author: The JT Leroy Story’ Renders a Literary Charlatan",
+      "summary_short": "Jeff Feuerzeig’s documentary charts the invention of an underage H.I.V.-positive hustler, and how the famous and nonfamous were taken in until the hoax was exposed.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:28",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/author-the-jt-leroy-story-review.html",
+        "suggested_link_text": "Read the New York Times Review of Author: The JT Leroy Story"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09AUTHOR/09AUTHOR-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Brother Nature",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "NEIL GENZLINGER",
+      "headline": "Review: ‘Brother Nature’: Fish Out of Water With the Future In-Laws",
+      "summary_short": "Taran Killam and Bobby Moynihan of “Saturday Night Live” are among the cast in an unfunny comedy set in the woods.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:28",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/review-brother-nature.html",
+        "suggested_link_text": "Read the New York Times Review of Brother Nature"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09BROTHER/09BROTHER-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Ithaca",
+      "mpaa_rating": "PG",
+      "critics_pick": 0,
+      "byline": "NEIL GENZLINGER",
+      "headline": "Review: In ‘Ithaca,’ Meg Ryan and Tom Hanks Reunite for a War Story",
+      "summary_short": "In this adaptation of William Saroyan’s “The Human Comedy,” a young bicycle messenger delivers telegrams to families during the tumultuous World War II years.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:27",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/ithaca-review-meg-ryan-tom-hanks.html",
+        "suggested_link_text": "Read the New York Times Review of Ithaca"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09ITHACA/09ITHACA-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "For the Love of Spock",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "ANDY WEBSTER",
+      "headline": "Review: ‘For the Love of Spock,’ a Son’s Tribute to Leonard Nimoy",
+      "summary_short": "Adam Nimoy’s documentary about his father nimbly straddles biography and “Star Trek” valentine, but also recounts the fraught but devoted ties between father and son.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:27",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/for-the-love-of-spock-review.html",
+        "suggested_link_text": "Read the New York Times Review of For the Love of Spock"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09FORLOVESPOCK/09FORLOVESPOCK-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Wild Life",
+      "mpaa_rating": "PG",
+      "critics_pick": 0,
+      "byline": "HELEN T. VERONGOS",
+      "headline": "Review: In ‘The Wild Life,’ Island Critters School a Castaway",
+      "summary_short": "This animated film, long on amiability if not complexity, features amusing animal characters learning to collaborate with a shipwrecked Crusoe.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:26",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/the-wild-life-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Wild Life"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09WILDLIFE/09WILDLIFE-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Transpecos",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "JEANNETTE CATSOULIS",
+      "headline": "Review: ‘Transpecos’: At a Dusty Border, a Trek Along a Moral Tightrope",
+      "summary_short": "Greg Kwedar’s first feature focuses on three United States Border Patrol agents at a desolate desert outpost.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:25",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/transpecos-review.html",
+        "suggested_link_text": "Read the New York Times Review of Transpecos"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09TRANSPECOS/09TRANSPECOS-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Other People",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "DANIEL M. GOLD",
+      "headline": "Review: In ‘Other People,’ a Son’s Anxieties Mount as Tragedy Looms",
+      "summary_short": "A deeply personal tale from the writer-director Chris Kelly, the movie follows a gay comedy writer in New York who returns home to care for his mother.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:24",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/other-people-review.html",
+        "suggested_link_text": "Read the New York Times Review of Other People"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09OTHERPEOPLE/09OTHERPEOPLE-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Landfill Harmonic",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "KEN JAWOROWSKI",
+      "headline": "Review: In ‘Landfill Harmonic,’ One Person’s Trash Is a Child’s Violin",
+      "summary_short": "This documentary focuses on a Paraguayan landfill that became the wellspring for a children’s orchestra, which uses instruments assembled from discards.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-12 22:44:23",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/landfill-harmonic-review.html",
+        "suggested_link_text": "Read the New York Times Review of Landfill Harmonic"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09LANDFILL1/09LANDFILL1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Come What May",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "GLENN KENNY",
+      "headline": "Review: ‘Come What May,’ an Ode to French Villagers Displaced by War",
+      "summary_short": "Christian Carion’s event-packed World War II film lines up an impressive cast but leans toward the sentimental and schematic.",
+      "publication_date": "2016-09-08",
+      "opening_date": "2016-09-09",
+      "date_updated": "2016-09-12 22:44:23",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/come-what-may-review.html",
+        "suggested_link_text": "Read the New York Times Review of Come What May"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09COMEWHAT/09COMEWHAT-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Apostate",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "ANDY WEBSTER",
+      "headline": "Review: ‘The Apostate’ Chronicles a Rebellious Catholic",
+      "summary_short": "Federico Veiroj’s wry comedy-drama portrays a frustrated young man who sets out on a quixotic mission to have his baptism records expunged.",
+      "publication_date": "2016-09-08",
+      "opening_date": null,
+      "date_updated": "2016-09-08 19:44:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/09/movies/apostate-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Apostate"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/09/09/arts/09APOSTATE/09APOSTATE-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Equal Means Equal",
+      "mpaa_rating": "",
+      "critics_pick": 1,
+      "byline": "HELEN T. VERONGOS",
+      "headline": "Review: ‘Equal Means Equal’ Asks How Far Women Have Really Come",
+      "summary_short": "Kamala Lopez’s fact-packed documentary features legal experts, ordinary women and feminists like Eleanor Smeal and Gloria Steinem.",
+      "publication_date": "2016-09-01",
+      "opening_date": "2016-09-02",
+      "date_updated": "2016-09-09 12:44:01",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2016/09/02/movies/equal-means-equal-review.html",
+        "suggested_link_text": "Read the New York Times Review of Equal Means Equal"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2016/06/09/movies/video-equal-means-equal/video-equal-means-equal-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    }
+  ]
+}
