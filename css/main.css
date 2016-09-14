@@ -1,102 +1,102 @@
 /* typography (font-family is handled by Typekit) */
 
 h1 {
-	font-size: 36px;
+  font-size: 36px;
 }
 
 .site-header h2 {
-	margin: 10px 0 25px 0;
-	font-size: 24px;
+  margin: 10px 0 25px 0;
+  font-size: 24px;
 }
 
 @media (min-width: 768px) {
-	h1 {
-		font-size: 50px
-	}
-	
-	.site-header h2 {
-		font-size: 30px;
-	}
+  h1 {
+    font-size: 50px
+  }
+  
+  .site-header h2 {
+    font-size: 30px;
+  }
 }
 
 p {
-	font-size: 16px;
-	line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 p a {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .site-header cite {
-	font-style: italic;
+  font-style: italic;
 }
 
 label {
-	font-size: 16px;
-	font-weight: 500;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .reviews > h2 {
-	margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .reviews > p {
-	margin: 0 0 50px 0;
+  margin: 0 0 50px 0;
 }
 
 .review-title {
-	margin: 15px 0 0 0;
-	font-weight: 500;
-	font-size: 25px;
-	line-height: 1;
+  margin: 15px 0 0 0;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1;
 }
 
 .review-headline {
-	margin: 0;
-	font-size: 18px;
-	text-transform: capitalize;
+  margin: 0;
+  font-size: 18px;
+  text-transform: capitalize;
 }
 
 .review-meta {
-	margin: 0 0 10px 0;
-	padding: 0;
-	list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
 }
 
 .review-meta li {
-	display: inline-block;
-	margin: 0 7px 0 0;
-	padding: 0 10px 0 0;
-	font-size: 12px;
-	border-right: 1px solid #333333;
+  display: inline-block;
+  margin: 0 7px 0 0;
+  padding: 0 10px 0 0;
+  font-size: 12px;
+  border-right: 1px solid #333333;
 }
 
 .review-meta li:last-child {
-	margin: 0;
-	padding: 0;
-	border: none;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .review p:last-of-type {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 
 
 
 .site-footer p {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .site-footer p:last-of-type {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-	.site-footer .mine p {
-		text-align: right;
-	}
+  .site-footer .mine p {
+    text-align: right;
+  }
 }
 
 
@@ -123,13 +123,13 @@ body {
 
 
 @media (min-width: 768px) {
-	body {
-		margin-bottom: 92px;
-	}
+  body {
+    margin-bottom: 92px;
+  }
 
-	.site-footer {
-		height: 92px;
-	}
+  .site-footer {
+    height: 92px;
+  }
 
 }
 
@@ -139,53 +139,53 @@ body {
 
 
 .site-header {
-	background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 main {
-	min-height: 500px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 form {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .review {
-	margin: 0 0 50px 0;
-	padding: 0 0 50px 0;
-	border-bottom: 1px solid #333333;
+  margin: 0 0 50px 0;
+  padding: 0 0 50px 0;
+  border-bottom: 1px solid #333333;
 }
 
 .review:last-of-type {
-	border: none;
+  border: none;
 }
 
 .site-footer {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background: #f1f1f1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f1f1f1;
 }
 
 .nyt-logo {
-	position: relative;
-	left: -7px;
+  position: relative;
+  left: -7px;
 }
 
 
 
 @media (max-width: 767px) {
-	.media-left {
-		display: block;
-	}
-	.media-body {
-		display: block;
-		width: auto;
-	}
-	.review-image {
-		display: inline-block;
-	}
+  .media-left {
+    display: block;
+  }
+  .media-body {
+    display: block;
+    width: auto;
+  }
+  .review-image {
+    display: inline-block;
+  }
 }
 
 
@@ -200,7 +200,7 @@ form {
 
 /* http://getbootstrap.com/getting-started/#support-printing */
 @media print {
-	.container {
-		width: auto;
-	}
+  .container {
+    width: auto;
+  }
 }
