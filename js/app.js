@@ -1,8 +1,6 @@
 jQuery(function($) {
 
-  var currentOffset = 0;
-  var hasMoreReviews = false;
-  $(".reviews-footer").hide();
+  resetPager();
 
   $.addTemplateFormatter({
     datePrettyFormatter: function(value, template) {
@@ -25,20 +23,21 @@ jQuery(function($) {
 
   $("#search-form").submit(function(e) {
     e.preventDefault();
-    //console.log(e);
 
-    if(e.isTrigger === null) {
+    //console.log(e);
+    if(e.originalEvent !== undefined) {
       console.log("normal submission");
+      resetPager();
     } else {
       console.log("pager submission");
     }
-    
-    
+
     var endpoint = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
 
     var data = $.param({
       'api-key': API_KEY_MOVIES,
-      'order': 'by-title'
+      'order': 'by-title',
+      'offset': currentOffset
     }) + '&' + $(this).serialize();
     //console.log(data);
 
@@ -46,7 +45,7 @@ jQuery(function($) {
       console.log(data);
 
       hasMoreReviews = data.has_more;
-      
+
       if(data.num_results == 0) {
         $("#results").html("<p>No results found.</p>")
         return false;
@@ -81,7 +80,7 @@ jQuery(function($) {
     }).fail(function(err) {
       console.log(err);
     });
-    
+
     return false;
 
   });
@@ -89,8 +88,11 @@ jQuery(function($) {
   $(".next").click(function(e) {
     e.preventDefault();
 
+    if(!hasMoreReviews) {
+      return false;
+    }
     currentOffset += 20;
-    console.log(currentOffset);
+    console.log("currentOffset: " + currentOffset);
     $("#search-form").submit();
 
     return false;
@@ -99,8 +101,11 @@ jQuery(function($) {
   $(".previous").click(function(e) {
     e.preventDefault();
 
+    if(currentOffset == 0) {
+      return false;
+    }
     currentOffset -= 20;
-    console.log(currentOffset);
+    console.log("currentOffset: " + currentOffset);
     $("#search-form").submit();
 
     return false;
@@ -108,18 +113,24 @@ jQuery(function($) {
 
 });
 
+function resetPager() {
+  currentOffset = 0;
+  hasMoreReviews = false;
+  $(".reviews-pager").hide();
+}
+
 function addPager(hasMoreReviews, currentOffset) {
   if(hasMoreReviews) {
     $(".next").removeClass("disabled");
+    $(".reviews-pager").show();
   } else {
     $(".next").addClass("disabled");
   }
 
   if(currentOffset > 0) {
     $(".previous").removeClass("disabled");
+    $(".reviews-pager").show();
   } else {
     $(".previous").addClass("disabled");
   }
-
-  $(".reviews-footer").show();
 }
