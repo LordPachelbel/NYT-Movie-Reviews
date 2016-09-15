@@ -10,14 +10,15 @@
 var baseURL = "https://api.nytimes.com/svc/movies/v2/";
 var endpoints = {
   keywordSearch:          "reviews/search.json",    // search by keyword
-  publicationDateSearch:  "reviews/search.json",    // search by publication date; uses the same endpoint as the keyword search
-  allReviews:             "reviews/all.json",       // get all reviews
-  picksInTheaters:        "reviews/picks.json",     // get all NYT Critics' Picks currently in theaters
+  publicationDateSearch:  "reviews/search.json",    // search by publication date; uses the same endpoint as the keyword search -- API for this is broken
+  allReviews:             "reviews/all.json",       // get all reviews -- redundant with keywordSearch's criticsPicks results filter
+  picksInTheaters:        "reviews/picks.json",     // get all NYT Critics' Picks currently in theaters -- redundant with keywordSearch's criticsPicks results filter
   allCritics:             "critics/all.json",       // get all Times reviewers
   allFullTimeCritics:     "critics/full-time.json", // get all full-time Times reviewers
   allPartTimeCritics:     "critics/part-time.json", // get all part-time Times reviewers
-  specificCritic:         "critics/"                // a specific critic. You have to complete the string like this: "critics/[reviewer name].json"
+  specificCritic:         "critics/"                // get a specific critic. You have to complete the string like this: "critics/[reviewer name].json"
                                                     // ^ for example, "critics/Stephen Holden.json"
+  // todo (maybe) - specificCritic could be used to create pop-up biographies of the reviewers when people click on their names
 }
 
 // Some global variables
@@ -51,7 +52,7 @@ function reviewQueryObj(endpoint, offset, order) {
 }
 
 /**
- * Query object prototype for getting all reviews.
+ * Query object prototype for getting all reviews. Using this is redundant with using keywordQueryObj's criticsPicks results filter.
  *
  * @class
  * @param {number} offset - Positive integer, multiple of 20.
@@ -63,7 +64,7 @@ function allReviewsQueryObj(offset, order) {
 allReviewsQueryObj.prototype = new reviewQueryObj();
 
 /**
- * Query object prototype for getting all NYT Critics' Picks reviews currently in theaters.
+ * Query object prototype for getting all NYT Critics' Picks reviews currently in theaters. Using this is redundant with using keywordQueryObj's criticsPicks results filter.
  *
  * @class
  * @param {number} offset - Positive integer, multiple of 20.
@@ -75,7 +76,7 @@ function allPicksReviewsObj(offset, order) {
 allPicksReviewsObj.prototype = new reviewQueryObj();
 
 /**
- * Query object prototype for getting reviews by keyword
+ * Query object prototype for getting reviews by keyword.
  *
  * @class
  * @param {number} offset - Positive integer, multiple of 20.
@@ -153,16 +154,15 @@ function addPager(hasMoreReviews, currentOffset) {
 }
 
 
-/** Gets reviews and display them. This function probably does too much and should be split into more functions. */
+/** Gets reviews and displays them. This function probably does too much and should be split into more functions. */
 function getReviewsFromAPI() {
 
-  var sortOrder    = $("#search-form input[name='sort-order']:checked").val();
-  var keywords     = $("#query").val();
-  var criticsPicks = $("#search-form input[name='critics-picks']:checked").val();
-  var reviewer     = $("#reviewer").val();
-  userQuery = new keywordQueryObj(currentOffset, sortOrder, keywords, criticsPicks, reviewer);
-
-  console.log(userQuery);
+  var sortOrder     = $("#search-form input[name='sort-order']:checked").val();
+  var keywords      = $("#query").val();
+  var criticsPicks  = $("#search-form input[name='critics-picks']:checked").val();
+  var reviewer      = $("#reviewer").val();
+  userQuery         = new keywordQueryObj(currentOffset, sortOrder, keywords, criticsPicks, reviewer);
+  //console.log(userQuery);
 
   $.getJSON(userQuery.endpoint, userQuery.queryString).done(function(data) {
     console.log(data);
