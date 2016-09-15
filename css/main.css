@@ -1,5 +1,17 @@
 /* typography (font-family is handled by Typekit) */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-variant-ligatures: common-ligatures;
+  -moz-font-feature-settings: "liga", "clig";
+  -webkit-font-feature-settings: "liga", "clig";
+  font-feature-settings: "liga", "clig";
+}
+
 h1 {
   font-size: 36px;
 }
@@ -32,9 +44,22 @@ p a {
   font-style: italic;
 }
 
-label {
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group > label {
   font-size: 16px;
   font-weight: 500;
+}
+
+.checkbox,
+.radio {
+  margin: 0 0 10px 0;
+}
+
+.radio label {
+  font-weight: 400;
 }
 
 .reviews > h2 {

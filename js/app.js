@@ -156,10 +156,15 @@ function addPager(hasMoreReviews, currentOffset) {
 /** Gets reviews and display them. This function probably does too much and should be split into more functions. */
 function getReviewsFromAPI() {
 
-  var keywordQuery = new keywordQueryObj(currentOffset, 'by-title', 'star');
-  //console.log(keywordQuery);
+  var sortOrder    = $("#search-form input[name='sort-order']:checked").val();
+  var keywords     = $("#query").val();
+  var criticsPicks = $("#search-form input[name='critics-picks']:checked").val();
+  var reviewer     = $("#reviewer").val();
+  userQuery = new keywordQueryObj(currentOffset, sortOrder, keywords, criticsPicks, reviewer);
 
-  $.getJSON(keywordQuery.endpoint, keywordQuery.queryString).done(function(data) {
+  console.log(userQuery);
+
+  $.getJSON(userQuery.endpoint, userQuery.queryString).done(function(data) {
     console.log(data);
 
     hasMoreReviews = data.has_more;
@@ -186,6 +191,7 @@ function getReviewsFromAPI() {
     });
 
     $("#results").loadTemplate("templates/review.html", data.results, {
+      //overwriteCache: true,   // uncomment this when you change something in the template
       isFile: true,
       success: addPager(hasMoreReviews, currentOffset),
       bindingOptions: {

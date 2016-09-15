@@ -48,6 +48,47 @@ ga('send', 'pageview');
             <input type="text" class="form-control" id="query" name="query" />
             <span class="help-block">Matches movie title and indexed terms</span>
           </div>
+          <div class="form-group">
+            <label for="sort-order">Sort Order</label>
+            <div class="radio">
+              <label for="sort-order-A">
+                <input type="radio" id="sort-order-A" name="sort-order" value="by-title" checked />
+                Alphabetical by Movie Title
+              </label>
+            </div>
+            <div class="radio">
+              <label for="sort-order-P">
+                <input type="radio" id="sort-order-P" name="sort-order" value="by-publication-date" />
+                Review Publication Date
+              </label>
+            </div>
+            <!--<select class="form-control" id="sort-order" name="sort-order">
+              <option value="by-title">Alphabetical</option>
+              <option value="by-publication-date">Publication Date</option>
+            </select>-->
+          </div>
+          <div class="form-group">
+            <label for="critics-picks">Filter Results</label>
+            <div class="radio">
+              <label for="critics-picks-all">
+                <input type="radio" id="critics-picks-all" name="critics-picks" value="" checked />
+                All Reviews
+              </label>
+            </div>
+            <div class="radio">
+              <label for="critics-picks-Y">
+                <input type="radio" id="critics-picks-Y" name="critics-picks" value="Y" />
+                NYT Critics' Picks Currently in Theaters
+              </label>
+            </div>
+            <!--This one doesn't work because the API is broken.-->
+            <!--<div class="radio">
+              <label for="critics-picks-N">
+                <input type="radio" id="critics-picks-N" name="critics-picks" value="N" />
+                Not NYT Critics' Picks
+              </label>
+            </div>-->
+          </div>
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </aside>
