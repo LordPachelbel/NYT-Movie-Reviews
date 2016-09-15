@@ -32,54 +32,7 @@ jQuery(function($) {
       console.log("pager submission");
     }
 
-    var endpoint = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
-
-    var data = $.param({
-      'api-key': API_KEY_MOVIES,
-      'order': 'by-title',
-      'offset': currentOffset
-    }) + '&' + $(this).serialize();
-    //console.log(data);
-
-    $.getJSON(endpoint, data).done(function(data) {
-      console.log(data);
-
-      hasMoreReviews = data.has_more;
-
-      if(data.num_results == 0) {
-        $("#results").html("<p>No results found.</p>")
-        return false;
-      }
-
-      $.each(data.results, function(key, review) {
-
-        templateData = null;
-        templateData = {
-          reviewLink: review.link.url,
-          reviewTitle: review.link.suggested_link_text,
-          reviewAlt: review.link.suggested_link_text,
-          reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
-          criticsPick: (review.critics_pick == 1) ? '<span class="glyphicon glyphicon-star" title="NYT Critics\' Pick"></span>' : ''
-        };
-
-        $.extend(review, templateData);
-        //console.log(review);
-
-      });
-
-      $("#results").loadTemplate("templates/review.html", data.results, {
-        isFile: true,
-        success: addPager(hasMoreReviews, currentOffset),
-        bindingOptions: {
-          ignoreUndefined: true,
-          ignoreNull: true,
-          ignoreEmptyString: true
-        }
-      });
-
-    }).fail(function(err) {
-      console.log(err);
-    });
+    getReviewsFromAPI($(this));
 
     return false;
 
@@ -112,6 +65,75 @@ jQuery(function($) {
   });
 
 });
+
+function reviewQuery() {
+  this.baseURL = "https://api.nytimes.com/svc/movies/v2/";
+}
+
+
+
+function getReviewsFromAPI(searchForm) {
+  console.log(searchForm);
+
+  var baseURL = "https://api.nytimes.com/svc/movies/v2/";
+  var endpoints = {
+    allReviews:       "reviews/all.json",     // All reviews
+    picksInTheaters:  "reviews/picks.json",   // NYT Critics' Picks currently in theaters
+    keywordSearch:    "reviews/search.json"
+
+  }
+
+
+
+  var endpoint = baseURL + endpoints.keywordSearch;
+
+  var data = $.param({
+    'api-key': API_KEY_MOVIES,
+    'order': 'by-title',
+    'offset': currentOffset
+  }) + '&' + searchForm.serialize();
+  //console.log(data);
+
+  $.getJSON(endpoint, data).done(function(data) {
+    console.log(data);
+
+    hasMoreReviews = data.has_more;
+
+    if(data.num_results == 0) {
+      $("#results").html("<p>No results found.</p>")
+      return false;
+    }
+
+    $.each(data.results, function(key, review) {
+
+      templateData = null;
+      templateData = {
+        reviewLink: review.link.url,
+        reviewTitle: review.link.suggested_link_text,
+        reviewAlt: review.link.suggested_link_text,
+        reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
+        criticsPick: (review.critics_pick == 1) ? '<span class="glyphicon glyphicon-star" title="NYT Critics\' Pick"></span>' : ''
+      };
+
+      $.extend(review, templateData);
+      //console.log(review);
+
+    });
+
+    $("#results").loadTemplate("templates/review.html", data.results, {
+      isFile: true,
+      success: addPager(hasMoreReviews, currentOffset),
+      bindingOptions: {
+        ignoreUndefined: true,
+        ignoreNull: true,
+        ignoreEmptyString: true
+      }
+    });
+
+  }).fail(function(err) {
+    console.log(err);
+  });
+}
 
 function resetPager() {
   currentOffset = 0;
