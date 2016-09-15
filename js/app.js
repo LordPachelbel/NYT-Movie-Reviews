@@ -20,8 +20,10 @@ var endpoints = {
                                                     // ^ for example, "critics/Stephen Holden.json"
 }
 
+// Some global variables
 var currentOffset = 0;        // The API returns results 20 at a time.
 var hasMoreReviews = false;   // The API also tells you if you can get more reviews by adding 20 to the last offset value you used.
+
 
 
 // A bunch of objects and prototypes to handle the API endpoints and query parameters.
@@ -38,7 +40,7 @@ var hasMoreReviews = false;   // The API also tells you if you can get more revi
 function reviewQueryObj(endpoint, offset, order) {
   this.apiKey = API_KEY_MOVIES; // defined in a different file
   this.baseURL = baseURL;       // global variable
-  this.endpoint = endpoint;
+  this.endpoint = baseURL + endpoint;
   this.offset = offset;
   this.order = order;
   this.queryString = $.param({
@@ -98,7 +100,7 @@ function keywordQueryObj(offset, order, keywords, criticsPicks, reviewer) { // I
 
 
 
-// Here is where I'd define query objects for date-based searches, but the API is broken. See the note at the top of this file.
+// Here is where I'd define query objects for date-based searches, but the API is broken, so I didn't bother. See the note at the top of this file.
 
 
 
@@ -124,13 +126,16 @@ console.log(keywordQueryTest3);
 
 
 
-// UI functions that show/hide and enable/disable the pager buttons
+// Functions that handle the pager UI
+
+/** Resets the pager UI on page load and after the form is submitted (via direct user action, not via triggered submits from the pager buttons). */
 function resetPager() {
   currentOffset = 0;
   hasMoreReviews = false;
   $(".reviews-pager").hide();
 }
 
+/** Displays the pager buttons if the API says there are more "pages" of data. Enables/disables buttons based on which page we're on. */
 function addPager(hasMoreReviews, currentOffset) {
   if(hasMoreReviews) {
     $(".next").removeClass("disabled");
@@ -146,6 +151,56 @@ function addPager(hasMoreReviews, currentOffset) {
     $(".previous").addClass("disabled");
   }
 }
+
+
+/** You can probably guess what this does. */
+function getReviewsFromAPI(searchForm) {
+  console.log(searchForm);
+
+  var keywordQuery = new keywordQueryObj(currentOffset, 'by-title', 'star');
+  console.log(keywordQuery);
+
+  $.getJSON(keywordQuery.endpoint, keywordQuery.queryString).done(function(data) {
+    console.log(data);
+
+    hasMoreReviews = data.has_more;
+
+    if(data.num_results == 0) {
+      $("#results").html("<p>No results found.</p>")
+      return false;
+    }
+
+    $.each(data.results, function(key, review) {
+
+      templateData = null;
+      templateData = {
+        reviewLink: review.link.url,
+        reviewTitle: review.link.suggested_link_text,
+        reviewAlt: review.link.suggested_link_text,
+        reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
+        criticsPick: (review.critics_pick == 1) ? '<span class="glyphicon glyphicon-star" title="NYT Critics\' Pick"></span>' : ''
+      };
+
+      $.extend(review, templateData);
+      //console.log(review);
+
+    });
+
+    $("#results").loadTemplate("templates/review.html", data.results, {
+      isFile: true,
+      success: addPager(hasMoreReviews, currentOffset),
+      bindingOptions: {
+        ignoreUndefined: true,
+        ignoreNull: true,
+        ignoreEmptyString: true
+      }
+    });
+
+  }).fail(function(err) {
+    console.log(err);
+  });
+}
+
 
 
 // Main app code
@@ -216,61 +271,3 @@ jQuery(function($) {
   });
 
 });
-
-
-
-
-
-
-function getReviewsFromAPI(searchForm) {
-  console.log(searchForm);
-
-  var endpoint = baseURL + endpoints.keywordSearch;
-
-  var data = $.param({
-    'api-key': API_KEY_MOVIES,
-    'offset': currentOffset,
-    'order': 'by-title'
-  }) + '&' + searchForm.serialize();
-  console.log(data);
-
-  $.getJSON(endpoint, data).done(function(data) {
-    console.log(data);
-
-    hasMoreReviews = data.has_more;
-
-    if(data.num_results == 0) {
-      $("#results").html("<p>No results found.</p>")
-      return false;
-    }
-
-    $.each(data.results, function(key, review) {
-
-      templateData = null;
-      templateData = {
-        reviewLink: review.link.url,
-        reviewTitle: review.link.suggested_link_text,
-        reviewAlt: review.link.suggested_link_text,
-        reviewImage: (review.multimedia !== null) ? review.multimedia.src : 'images/no-image.gif',
-        criticsPick: (review.critics_pick == 1) ? '<span class="glyphicon glyphicon-star" title="NYT Critics\' Pick"></span>' : ''
-      };
-
-      $.extend(review, templateData);
-      //console.log(review);
-
-    });
-
-    $("#results").loadTemplate("templates/review.html", data.results, {
-      isFile: true,
-      success: addPager(hasMoreReviews, currentOffset),
-      bindingOptions: {
-        ignoreUndefined: true,
-        ignoreNull: true,
-        ignoreEmptyString: true
-      }
-    });
-
-  }).fail(function(err) {
-    console.log(err);
-  });
-}
