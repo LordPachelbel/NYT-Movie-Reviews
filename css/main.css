@@ -62,6 +62,7 @@ p a {
   font-weight: 400;
 }
 
+aside > h2,
 .reviews > h2 {
   margin: 0 0 10px 0;
 }
@@ -168,14 +169,52 @@ body {
 }
 
 main {
-  min-height: 500px;
-  padding-top: 50px;
+  min-height: 600px;
+  padding-top: 30px;
   padding-bottom: 50px;
 }
 
-form {
-  margin-bottom: 50px;
+.search-form-wrapper,
+.reviews {
+  padding-top: 15px;
 }
+
+.search-form-wrapper {
+  width: 100vw;
+  padding: 15px;
+  margin: 0 0 50px -15px;
+  background: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  main {
+    min-height: 700px;
+  }
+
+  .search-form-wrapper {
+    position: fixed;
+    width: 220px;
+    margin-left: -15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-form-wrapper {
+
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-form-wrapper {
+    width: 278px;
+  }
+}
+
+/*@media (min-width: 768px) {
+  .reviews > * {
+    padding-left: 15px;
+  }
+}*/
 
 .review {
   margin: 0 0 50px 0;

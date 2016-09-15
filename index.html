@@ -41,57 +41,65 @@ ga('send', 'pageview');
 <main id="main">
   <div class="container">
     <div class="row">
-      <aside class="col-sm-4 col-md-3">
-        <form id="search-form">
-          <div class="form-group">
-            <label for="query">Enter Keywords</label>
-            <input type="text" class="form-control" id="query" name="query" />
-            <span class="help-block">Matches movie title and indexed terms</span>
-          </div>
-          <div class="form-group">
-            <label for="sort-order">Sort Order</label>
-            <div class="radio">
-              <label for="sort-order-A">
-                <input type="radio" id="sort-order-A" name="sort-order" value="by-title" checked />
-                Alphabetical by Movie Title
-              </label>
+      <div class="col col-sm-4 col-md-3">
+        <aside class="search-form-wrapper">
+          <h2>Search Form</h2>
+          <form id="search-form">
+            <div class="form-group">
+              <label for="query">Movie Title and Keywords</label>
+              <input type="text" class="form-control" id="query" name="query" />
+              <span class="help-block">Matches movie title and indexed terms</span>
             </div>
-            <div class="radio">
-              <label for="sort-order-P">
-                <input type="radio" id="sort-order-P" name="sort-order" value="by-publication-date" />
-                Review Publication Date
-              </label>
+            <div class="form-group">
+              <label for="reviewer">Reviewer Name</label>
+              <input type="text" class="form-control" id="reviewer" name="reviewer" />
+              <span class="help-block">E.g. <i>Stephen Holden</i>, <i>A. O. Scott</i>, etc.</span>
             </div>
-            <!--<select class="form-control" id="sort-order" name="sort-order">
-              <option value="by-title">Alphabetical</option>
-              <option value="by-publication-date">Publication Date</option>
-            </select>-->
-          </div>
-          <div class="form-group">
-            <label for="critics-picks">Filter Results</label>
-            <div class="radio">
-              <label for="critics-picks-all">
-                <input type="radio" id="critics-picks-all" name="critics-picks" value="" checked />
-                All Reviews
-              </label>
+            <div class="form-group">
+              <label for="sort-order">Sort Order</label>
+              <div class="radio">
+                <label for="sort-order-A">
+                  <input type="radio" id="sort-order-A" name="sort-order" value="by-title" checked />
+                  Alphabetical by Movie Title
+                </label>
+              </div>
+              <div class="radio">
+                <label for="sort-order-P">
+                  <input type="radio" id="sort-order-P" name="sort-order" value="by-publication-date" />
+                  Review Publication Date
+                </label>
+              </div>
+              <!--<select class="form-control" id="sort-order" name="sort-order">
+                <option value="by-title">Alphabetical</option>
+                <option value="by-publication-date">Publication Date</option>
+              </select>-->
             </div>
-            <div class="radio">
-              <label for="critics-picks-Y">
-                <input type="radio" id="critics-picks-Y" name="critics-picks" value="Y" />
-                NYT Critics' Picks Currently in Theaters
-              </label>
+            <div class="form-group">
+              <label for="critics-picks">Filter Results</label>
+              <div class="radio">
+                <label for="critics-picks-all">
+                  <input type="radio" id="critics-picks-all" name="critics-picks" value="" checked />
+                  All Reviews
+                </label>
+              </div>
+              <div class="radio">
+                <label for="critics-picks-Y">
+                  <input type="radio" id="critics-picks-Y" name="critics-picks" value="Y" />
+                  NYT Critics' Picks Currently in Theaters
+                </label>
+              </div>
+              <!--This one doesn't work because the API is broken.-->
+              <!--<div class="radio">
+                <label for="critics-picks-N">
+                  <input type="radio" id="critics-picks-N" name="critics-picks" value="N" />
+                  Not NYT Critics' Picks
+                </label>
+              </div>-->
             </div>
-            <!--This one doesn't work because the API is broken.-->
-            <!--<div class="radio">
-              <label for="critics-picks-N">
-                <input type="radio" id="critics-picks-N" name="critics-picks" value="N" />
-                Not NYT Critics' Picks
-              </label>
-            </div>-->
-          </div>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </aside>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </aside>
+      </div>
       <section class="reviews col-sm-8 col-md-9">
         <h2>Search Results</h2>
         <p><span class="glyphicon glyphicon-star" title="NYT Critics' Pick"></span> indicates NYT Critics' Pick</p>
@@ -101,7 +109,9 @@ ga('send', 'pageview');
             <li class="next disabled"><a href="#">Next</a></li>
           </ul>
         </nav>
-        <div id="results"></div>
+        <div id="results">
+          <p><span class="glyphicon glyphicon-arrow-left"></span> Search for some movie reviews!</p>
+        </div>
         <nav class="reviews-pager" aria-label="Search results pages">
           <ul class="pager">
             <li class="previous disabled"><a href="#">Previous</a></li>
