@@ -153,12 +153,11 @@ function addPager(hasMoreReviews, currentOffset) {
 }
 
 
-/** You can probably guess what this does. */
-function getReviewsFromAPI(searchForm) {
-  console.log(searchForm);
+/** Gets reviews and display them. This function probably does too much and should be split into more functions. */
+function getReviewsFromAPI() {
 
   var keywordQuery = new keywordQueryObj(currentOffset, 'by-title', 'star');
-  console.log(keywordQuery);
+  //console.log(keywordQuery);
 
   $.getJSON(keywordQuery.endpoint, keywordQuery.queryString).done(function(data) {
     console.log(data);
@@ -238,7 +237,7 @@ jQuery(function($) {
       console.log("pager submission");
     }
 
-    getReviewsFromAPI($(this));
+    getReviewsFromAPI();
 
     return false;
 
