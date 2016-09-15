@@ -41,10 +41,11 @@ function reviewQueryObj(endpoint, offset, order) {
   this.endpoint = endpoint;
   this.offset = offset;
   this.order = order;
-  this.queryString =
-    'api-key=' + this.apiKey +
-    '&offset=' + this.offset +
-    '&order='  + this.order;
+  this.queryString = $.param({
+    'api-key': this.apiKey,
+    'offset':  this.offset,
+    'order':   this.order
+  });
 }
 
 /**
@@ -223,16 +224,6 @@ jQuery(function($) {
 
 function getReviewsFromAPI(searchForm) {
   console.log(searchForm);
-
-  var baseURL = "https://api.nytimes.com/svc/movies/v2/";
-  var endpoints = {
-    allReviews:       "reviews/all.json",     // All reviews
-    picksInTheaters:  "reviews/picks.json",   // NYT Critics' Picks currently in theaters
-    keywordSearch:    "reviews/search.json"
-
-  }
-
-
 
   var endpoint = baseURL + endpoints.keywordSearch;
 
