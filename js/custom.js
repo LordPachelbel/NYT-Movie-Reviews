@@ -4,4 +4,10 @@ jQuery(function($) {
     window.open(this.href);
     return false;
   });
+
+  $(".back-to-top").click(function(e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
 });
