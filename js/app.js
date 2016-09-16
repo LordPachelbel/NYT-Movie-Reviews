@@ -39,13 +39,13 @@ var hasMoreReviews = false;   // The API also tells you if you can get more revi
  * @param {('by-title'|'by-publication-date'|'by-opening-date')} order - The sort order of the results.
  */
 function reviewQueryObj(endpoint, offset, order) {
-  this.apiKey = API_KEY_MOVIES; // defined in a different file
+  //this.apiKey = API_KEY_MOVIES; // defined in a different file  -- I'm using a server-side PHP proxy for this now
   this.baseURL = baseURL;       // global variable
   this.endpoint = baseURL + endpoint;
   this.offset = offset;
   this.order = order;
   this.queryString = $.param({
-    'api-key': this.apiKey,
+    //'api-key': this.apiKey,   // I'm using a server-side PHP proxy for this now
     'offset':  this.offset,
     'order':   this.order
   });
@@ -88,14 +88,14 @@ allPicksReviewsObj.prototype = new reviewQueryObj();
 function keywordQueryObj(offset, order, keywords, criticsPicks, reviewer) { // I suppose the last two arguments could have been an object called "options"
   reviewQueryObj.call(this, endpoints.keywordSearch, offset, order);
 
-  this.queryString += '&query=' + keywords;
+  this.queryString += '&query=' + encodeURIComponent(keywords);
 
   if(criticsPicks) {
     this.queryString += '&critics-pick=' + criticsPicks;
   }
 
   if(reviewer) {
-    this.queryString += '&reviewer=' + reviewer;
+    this.queryString += '&reviewer=' + encodeURIComponent(reviewer);
   }
 }
 
@@ -164,7 +164,12 @@ function getReviewsFromAPI() {
   userQuery         = new keywordQueryObj(currentOffset, sortOrder, keywords, criticsPicks, reviewer);
   //console.log(userQuery);
 
-  $.getJSON(userQuery.endpoint, userQuery.queryString).done(function(data) {
+  // I'm putting my API key in a non-public part of the web server and using PHP to add it to the AJAX query
+  userQuery.queryString += '&endpoint=' + userQuery.endpoint; // So I have to tell the proxy which endpoint to connect to
+  //console.log(userQuery);
+
+  //$.getJSON('userQuery.endpoint', userQuery.queryString).done(function(data) {  // non-proxy version
+  $.getJSON('ajax_proxy.php', userQuery.queryString).done(function(data) {
     console.log(data);
 
     hasMoreReviews = data.has_more;
