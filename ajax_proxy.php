@@ -1,6 +1,6 @@
 <?php
 
-// The API key shouldn't be publically readable so we'll keep it in a non-public part of the web server.
+// The API key shouldn't be publicly readable so we'll keep it in a non-public part of the web server.
 // This file is just a proxy that adds the API key to the AJAX request.
 
 ini_set('include_path', ini_get('include_path') . ':/home/jordanbr');
