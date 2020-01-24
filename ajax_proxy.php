@@ -4,7 +4,7 @@
 // This file is just a proxy that adds the API key to the AJAX request.
 
 ini_set('include_path', ini_get('include_path') . ':/home/jordanbr');
-require_once('/home/jordanbr/NYT-Movie-Reviews-api-key.inc.php');	// defines $API_KEY_MOVIES
+require_once('NYT-Movie-Reviews-api-key.inc.php');	// defines $API_KEY_MOVIES
 
 $endpoint = array_pop($_GET);	// remove endpoint from query (assumes endpoint is the final URL parameter)
 $url = "{$endpoint}?api-key={$API_KEY_MOVIES}&" . http_build_query($_GET);
